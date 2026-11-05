@@ -34,7 +34,7 @@ class Registro:
     def VotoPerPosizione(self, indice: int) -> Voto:
         return self.voti[indice]
 
-
+#RIGHE DI CODICE MALEVOLOO
 if __name__ == "__main__":
 
     registro = Registro()
