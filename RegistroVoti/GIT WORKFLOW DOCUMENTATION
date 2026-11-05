@@ -1,0 +1,54 @@
+GIT WORKFLOW
+Attualmente la situazione dei commit del mio progetto è questa:
+
+commit 42f8226525e55c20cafb0f06a5881394be022c55 (HEAD -> master, origin/master)
+Author: davide cesaretti <davide.cesaretti.stud@ispascalcomandini.it>
+Date:   Thu Nov 5 16:36:14 2026 +0100
+
+    RegistroVoti
+
+commit 76f0076fcaf82be8ef423cb4b5b9ad68ed201ddb
+Author: davide cesaretti <davide.cesaretti.stud@ispascalcomandini.it>
+Date:   Thu Nov 5 16:12:27 2026 +0100
+
+    FirstCommit
+
+come possiamo vedere abbiamo due commit, FirstCommit e RegistroVoti.
+
+
+ESEMPIO DI RESET HARD DI UN COMMIT
+Andiamo ad aggiungere delle righe al nostro file
+
+C:\Users\user\Desktop\01-fondamenti\RegistroVoti>git diff
+diff --git a/RegistroVoti/registro_voti.py b/RegistroVoti/registro_voti.py
+index e379b6c..4796946 100644
+--- a/RegistroVoti/registro_voti.py
++++ b/RegistroVoti/registro_voti.py
+@@ -34,7 +34,7 @@ class Registro:
+     def VotoPerPosizione(self, indice: int) -> Voto:
+         return self.voti[indice]
+
+-
++#RIGHE DI CODICE MALEVOLOO
+ if __name__ == "__main__":
+
+     registro = Registro()
+ come si può vedere ho aggiunto una riga di codice malevolo. 
+
+16bdc44 (HEAD -> master, origin/master) Add function
+42f8226 RegistroVoti
+76f0076 FirstCommit
+
+dopo aver committato questa è la situazione. Quello che si vuole fare con il reset hard, è proprio andare ad eliminare le ultime modifiche
+che magari hanno portato dei bug nel codice. 
+
+C:\Users\user\Desktop\01-fondamenti\RegistroVoti>git reset --hard 42f8226
+HEAD is now at 42f8226 RegistroVoti
+
+C:\Users\user\Desktop\01-fondamenti\RegistroVoti>git reflog
+42f8226 (HEAD -> master) HEAD@{0}: reset: moving to 42f8226
+16bdc44 (origin/master) HEAD@{1}: commit: Add function
+42f8226 (HEAD -> master) HEAD@{2}: commit: RegistroVoti
+76f0076 HEAD@{3}: commit (initial): FirstCommit
+
+come notiamo dal reflog abbiamo eliminato il commit sbagliato e adesso l'HEAD di trova sul commit che abbiamo indicato nel reset
