@@ -21,7 +21,12 @@ def filtra_controlli_non_validi(aeromobili):
         veicolo for veicolo in aeromobili if aeromobili["controlli_ok"] is False
     ]
 
-
+def filtra_oltre_soglia(aereomobili, soglia):
+    return[
+        veicolo
+        for veicolo in aereomobili
+        if aereomobili["ore_volo"] > soglia
+    ]
 
 
 
