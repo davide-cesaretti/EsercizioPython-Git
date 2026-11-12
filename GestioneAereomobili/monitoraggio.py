@@ -40,6 +40,7 @@ if __name__ == "__main__":
     print("====FILTRATI PER SOGLIA ORE====")
     for item in filtrati_per_controllo:
             print(f"Codice: {item["codice"]}")
-    
 
+
+# AGGIUNTA SIMBOLICA DEL CODICE
 
