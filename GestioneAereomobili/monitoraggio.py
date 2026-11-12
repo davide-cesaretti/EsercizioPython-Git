@@ -16,5 +16,13 @@ def stampa_riepilgo() -> None:
               f"Ore di volo: {veicolo["ore_volo"]}"
               f"Controlli(Ok): {veicolo["controlli_ok"]}")
 
+def filtra_controlli_non_validi(aeromobili):
+    return [
+        veicolo for veicolo in aeromobili if aeromobili["controlli_ok"] is False
+    ]
+
+
+
+
 
 
