@@ -28,6 +28,18 @@ def filtra_oltre_soglia(aereomobili, soglia):
         if aereomobili["ore_volo"] > soglia
     ]
 
+if __name__ == "__main__":
+    stampa_riepilgo()
+    filtrati_per_controllo = filtra_controlli_non_validi(aeromobili)
+    filtra_per_ore_soglia = filtra_oltre_soglia(aeromobili, SOGLIA_ORE)
 
+    print("====FILTRATI PER CONTROLLI NON VALIDI====")
+    for item in filtrati_per_controllo:
+        print(f"Codice: {item["codice"]}")
+
+    print("====FILTRATI PER SOGLIA ORE====")
+    for item in filtrati_per_controllo:
+            print(f"Codice: {item["codice"]}")
+    
 
 
